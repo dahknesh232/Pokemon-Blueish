@@ -243,6 +243,10 @@ class Main:
         pygame.display.update()
         pygame.time.delay(Time)
 
+    def Quit_Game(self):
+        pygame.quit()
+        sys.exit()
+
     def Player_Spawn(self,House:str,pos:tuple):
         self.Events.Stage = House
         self.Camera_Barriers_Control()
@@ -6431,8 +6435,7 @@ class Main:
                 self.BattlePlayerPoke.EnemyBattlerect,self.Opponents_Pokemon.PlayerBattlerect = self.Opponents_Pokemon.EnemyBattlerect,self.BattlePlayerPoke.PlayerBattlerect
                 for e in pygame.event.get():
                     if e.type == pygame.QUIT:
-                        pygame.quit()
-                        sys.exit()
+                        self.Quit_Game()
                     if (self.BattlePokemon or self.Healing_Item[1]) and e.type == pygame.KEYDOWN:
                         if e.key == pygame.K_BACKSPACE: self.Back = True
                     if e.type == pygame.KEYDOWN and (e.key == pygame.K_LSHIFT or e.key == pygame.K_RSHIFT):
@@ -8972,8 +8975,7 @@ class Main:
                 self.BattlePlayerPoke.EnemyBattlerect,self.Opponents_Pokemon.PlayerBattlerect = self.Opponents_Pokemon.EnemyBattlerect,self.BattlePlayerPoke.PlayerBattlerect
                 for e in pygame.event.get():
                     if e.type == pygame.QUIT:
-                        pygame.quit()
-                        sys.exit()
+                        self.Quit_Game()
                     if (self.BattlePokemon or self.Healing_Item[1]) and e.type == pygame.KEYDOWN:
                         if e.key == pygame.K_BACKSPACE: self.Back = True
                     if e.type == pygame.KEYDOWN and (e.key == pygame.K_LSHIFT or e.key == pygame.K_RSHIFT):
@@ -10767,8 +10769,7 @@ class Main:
             while running:
                 for e in pygame.event.get():
                     if e.type == pygame.QUIT:
-                        pygame.quit()
-                        sys.exit()
+                        self.Quit_Game()
                     if e.type == pygame.KEYDOWN and (e.key == pygame.K_LSHIFT or e.key == pygame.K_RSHIFT):
                         if Trainer_Intro:
                             Trainer_Intro = False
@@ -11540,10 +11541,8 @@ class Main:
             self.Player_Pause = True
             pygame.draw.rect(SCREEN,"White",self.MenuBar)
             if self.MenuOption5:
-                self.Player.Menu = False
                 self.MenuOption5 = False
-                self.Player.Moveable = True
-                self.Player_Pause = False
+                self.Quit_Game()
             self.Show_Options1([(self.MenuOption1_Rect,self.MenuOption1_Text,self.MenuOption1_Text_Rect),(self.MenuOption2_Rect,self.MenuOption2_Text,self.MenuOption2_Text_Rect),(self.MenuOption3_Rect,self.MenuOption3_Text,self.MenuOption3_Text_Rect),(self.MenuOption4_Rect,self.MenuOption4_Text,self.MenuOption4_Text_Rect),(self.MenuOption5_Rect,self.MenuOption5_Text,self.MenuOption5_Text_Rect)])
             if True not in (self.MenuOption1,self.MenuOption2 ,self.MenuOption3,self.MenuOption4):
                 self.CC_MenuOptions()
@@ -14472,8 +14471,7 @@ check = False
 while True:
     for e in pygame.event.get():
         if e.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+            Game.Quit_Game()
 
         if e.type == pygame.KEYDOWN:
             if e.key == pygame.K_F5:
