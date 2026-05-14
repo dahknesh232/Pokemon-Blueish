@@ -10,6 +10,8 @@ pygame.init()
 SCREEN = pygame.display.set_mode((800,800))
 pygame.display.set_caption('Pokemon Blueish')
 clock = pygame.time.Clock()
+SAVE_STATE_FILE = 'Player_Info.txt'
+
 
 class Main:
     def __init__(self):
@@ -428,12 +430,13 @@ class Main:
                     self.Player_Data[f"PCPokemon{i}{Index}SPEED"] = Pokemon.SPEED
                     self.Player_Data[f"PCPokemon{i}{Index}exp"] = Pokemon.exp
                     self.Player_Data[f"PCPokemon{i}{Index}MaxHP"] = Pokemon.MAXHP
-        with open('Player_Info.txt', 'w') as Player_file:
+        with open(SAVE_STATE_FILE, 'w') as Player_file:
             json.dump(self.Player_Data,Player_file) #First is the data we want to store, second is the file we want to store it in
+        print(f"Saved game state to {SAVE_STATE_FILE}")
 
     def Load(self):
         try:
-            with open('Player_Info.txt') as Player_file: self.Player_Data = json.load(Player_file) 
+            with open(SAVE_STATE_FILE) as Player_file: self.Player_Data = json.load(Player_file) 
             for TI,Trainers in enumerate(self.OtherTrainers):
                 for x,trainer in enumerate(Trainers):
                     trainer.Battled = self.Player_Data[f"OtherTrainers{TI}{x}"]
@@ -534,7 +537,7 @@ class Main:
             self.Events.OverworldLocation = self.Player_Data["OverworldLocation"]
             self.Events.PlayerPoke = self.Player_Data["PlayerPoke"]
             self.Events.PokeMartCutscene = self.Player_Data["PokeMartCutscene"]
-            self.Events.HasPokeballs =  self.Player_Data["HasPoke Balls"]
+            self.Events.HasPokeballs = self.Player_Data.get("HasPokeBalls", self.Player_Data.get("HasPokeballs", self.Player_Data.get("HasPoke Balls", False)))
             self.Events.OakPokeBallCutscene1 = self.Player_Data["OakPoke BallCutscene"]
             self.Events.OptionalRivalFightDone = self.Player_Data["OptionalRivalBattle"]
             self.Events.NBRocketEncounter= self.Player_Data["NBRocketEncounter"]
@@ -13763,6 +13766,9 @@ class Main:
         elif self.MenuOption4:
             self.Save()
             self.MenuOption4 = False
+            self.Player.Menu = False
+            self.Player.Moveable = True
+            self.Player_Pause = False
 
     def MissedTurn(self):
         if self.Opponents_Pokemon.Trainer == "Wild":
@@ -14468,6 +14474,12 @@ while True:
         if e.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_F5:
+                Game.Save()
+            elif e.key == pygame.K_F9:
+                Game.Load()
         
         if Game.Events.Stage == "Start" and e.type == pygame.KEYDOWN:
             Game.Events.Stage = "Dr.Oak talk"
