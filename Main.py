@@ -109,7 +109,7 @@ class Main:
         self.RivalPokemon = []
         self.Black_Screen = pygame.Rect(-1000,0,SCREEN.get_width(),SCREEN.get_height())
         self.BattleBox = pygame.Rect(0,450,800,350)
-        self.Player_Back = pygame.image.load(r'Trainer_imgs\Player_Back.png').convert_alpha()
+        self.Player_Back = pygame.image.load(r'Trainer_imgs/Player_Back.png').convert_alpha()
         self.Player_Back = pygame.transform.rotozoom(self.Player_Back,360,1/2)
         self.Player_Back_rect = self.Player_Back.get_rect(topleft = (55, 230))
         Bally = 370
@@ -1957,7 +1957,7 @@ class Main:
                     if self.Player.rect.colliderect(self.Kanto.OptionalRivalBattleLine):
                         self.Player_Pause = True
                         self.Kanto.Rival.Team = self.Make_RivalTeam(8,["Scratch","Growl","Ember","-"],["Tackle","Growl","Leech Seed","-"],["Tackle","Tail Whip","Bubble","-"],[Pokemon("Pidgey",9,["Gust","Sand Attack",'-','-'],self.RivalName,"Pidgey")],[Pokemon("Pidgey",9,["Gust","Sand Attack",'-','-'],self.RivalName,"Pidgey")],[Pokemon("Pidgey",9,["Gust","Sand Attack",'-','-'],self.RivalName,"Pidgey")])
-                        self.Kanto.Rival.image = pygame.image.load(r"Map\Tileset\NPCS\Rival_Idle_Left.png").convert_alpha()
+                        self.Kanto.Rival.image = pygame.image.load(r"Map/Tileset/NPCS/Rival_Idle_Left.png").convert_alpha()
                         self.Kanto.Rival.rect.center = self.Kanto.R22RivalSpot
                         self.Kanto.OverworldCamera.add(self.Kanto.Rival)
                         self.Player.image = self.Player.Idle_Right
@@ -1981,7 +1981,7 @@ class Main:
                                                                             [Pokemon("Pidgeot",47,["Wing Attack","Agility",'Quick Attack','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Rhyhorn",45,["Fury Attack","Stomp",'Horn Attack','Tail Whip'],self.RivalName,"Rhyhorn"),Pokemon("Exeggcute",45,["SolarBeam","Poison Powder",'Leech Seed','Stun Spore'],self.RivalName,"Exeggcute"),Pokemon("Gyarados",47,["Leer","Dragon Rage",'Bite','Hydro Pump'],self.RivalName,"Gyarados"),Pokemon("Alakazam",50,["Psybeam","Psychic",'Reflect','Recover'],self.RivalName,"Alakazam")],
                                                                             [Pokemon("Pidgeot",47,["Wing Attack","Agility",'Quick Attack','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Rhyhorn",45,["Fury Attack","Stomp",'Horn Attack','Tail Whip'],self.RivalName,"Rhyhorn"),Pokemon("Gyarados",45,["Leer","Dragon Rage",'Bite','Hydro Pump'],self.RivalName,"Gyarados"),Pokemon("Growlithe",47,["Leer","Agility",'Ember','Take Down'],self.RivalName,"Growlithe"),Pokemon("Alakazam",50,["Psybeam","Psychic",'Reflect','Recover'],self.RivalName,"Alakazam")],
                                                                             [Pokemon("Pidgeot",47,["Wing Attack","Agility",'Quick Attack','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Rhyhorn",45,["Fury Attack","Stomp",'Horn Attack','Tail Whip'],self.RivalName,"Rhyhorn"),Pokemon("Growlithe",45,["Leer","Agility",'Ember','Take Down'],self.RivalName,"Growlithe"),Pokemon("Exeggcute",47,["SolarBeam","Poison Powder",'Leech Seed','Stun Spore'],self.RivalName,"Exeggcute"),Pokemon("Alakazam",50,["Psybeam","Psychic",'Reflect','Recover'],self.RivalName,"Alakazam")],Stage=3)
-                        self.Kanto.Rival.image = pygame.image.load(r"Map\Tileset\NPCS\Rival_Idle_Right.png").convert_alpha()
+                        self.Kanto.Rival.image = pygame.image.load(r"Map/Tileset/NPCS/Rival_Idle_Right.png").convert_alpha()
                         self.Player.rect.centery = self.Kanto.BPLRivalSpot[1]
                         self.Kanto.Rival.rect.center = self.Kanto.BPLRivalSpot
                         self.Kanto.OverworldCamera.add(self.Kanto.Rival)
@@ -2061,7 +2061,7 @@ class Main:
                     if self.Player.rect.colliderect(self.Kanto.CCRivalBattleLine):
                         self.Player_Pause = True
                         self.Kanto.Rival.Team = self.Make_RivalTeam(17,["Scratch","Growl","Ember","Leer"],["Tackle","Growl","Leech Seed","Vine Whip"],["Tackle","Tail Whip","Bubble","Water Gun"],[Pokemon("Pidgeotto",18,["Gust","Sand Attack",'Quick Attack','-'],self.RivalName,"Pidgeotto"),Pokemon("Abra",15,["Teleport","-",'-','-'],self.RivalName,"Abra"),Pokemon("Rattata",15,["Tackle","Tail Whip",'Quick Attack','Hyper Fang'],self.RivalName,"Rattata")],[Pokemon("Pidgeotto",18,["Gust","Sand Attack",'Quick Attack','-'],self.RivalName,"Pidgeotto"),Pokemon("Abra",15,["Teleport","-",'-','-'],self.RivalName,"Abra"),Pokemon("Rattata",15,["Tackle","Tail Whip",'Quick Attack','Hyper Fang'],self.RivalName,"Rattata")],[Pokemon("Pidgeotto",18,["Gust","Sand Attack",'Quick Attack','-'],self.RivalName,"Pidgeotto"),Pokemon("Abra",15,["Teleport","-",'-','-'],self.RivalName,"Abra"),Pokemon("Rattata",15,["Tackle","Tail Whip",'Quick Attack','Hyper Fang'],self.RivalName,"Rattata")])
-                        self.Kanto.Rival.image = pygame.image.load(r"Map\Tileset\NPCS\Rival_Idle_Down.png").convert_alpha()
+                        self.Kanto.Rival.image = pygame.image.load(r"Map/Tileset/NPCS/Rival_Idle_Down.png").convert_alpha()
                         self.Player.rect.center = self.Kanto.CCRivalBattleSpot
                         self.Kanto.Rival.rect.center = (self.Kanto.CCRivalBattleSpot[0],self.Kanto.CCRivalBattleSpot[1] - 60)
                         self.Kanto.OverworldCamera.add(self.Kanto.Rival)
@@ -2498,7 +2498,7 @@ class Main:
                     self.Player_Pause = True
                     self.Player.image = self.Player.Idle_Up
                     self.Kanto.Rival.rect.center = self.Kanto.Rival_RivalBattlePoint
-                    self.Kanto.Rival.image = pygame.image.load(r'Map\Tileset\NPCS\Rival_Idle_Down.png').convert_alpha()
+                    self.Kanto.Rival.image = pygame.image.load(r'Map/Tileset/NPCS/Rival_Idle_Down.png').convert_alpha()
                     self.Events.Dialouge(f"{self.RivalName}:Wait {self.PlayerName}! Let's check out our POKEMON!","Come on, I'll take you on!")
                     self.Kanto.Rival.Team = self.Make_RivalTeam(5,["Scratch","Growl","-","-"],["Tackle","Growl","-","-"],["Tackle","Tail Whip","-","-"],[],[],[])
             if self.Events.RivalBattle:
@@ -3042,7 +3042,7 @@ class Main:
                 if self.Player.rect.colliderect(self.Kanto.SSBattleLine):
                     self.Player_Pause = True
                     self.Kanto.Rival.Team = self.Make_RivalTeam(20,["Scratch","Growl","Ember","Leer"],["Tackle","Growl","Leech Seed","Vine Whip"],["Tackle","Tail Whip","Bubble","Water Gun"],[Pokemon("Pidgeotto",19,["Gust","Sand Attack",'Quick Attack','-'],self.RivalName,"Pidgeotto"),Pokemon("Kadabra",18,["Teleport","Confusion",'Disable','-'],self.RivalName,"Kadabra"),Pokemon("Raticate",16,["Tackle","Tail Whip",'Quick Attack','Hyper Fang'],self.RivalName,"Raticate")],[Pokemon("Pidgeotto",19,["Gust","Sand Attack",'Quick Attack','-'],self.RivalName,"Pidgeotto"),Pokemon("Kadabra",18,["Teleport","Confusion",'Disable','-'],self.RivalName,"Kadabra"),Pokemon("Raticate",16,["Tackle","Tail Whip",'Quick Attack','Hyper Fang'],self.RivalName,"Raticate")],[Pokemon("Pidgeotto",19,["Gust","Sand Attack",'Quick Attack','-'],self.RivalName,"Pidgeotto"),Pokemon("Kadabra",18,["Teleport","Confusion",'Disable','-'],self.RivalName,"Kadabra"),Pokemon("Raticate",16,["Tackle","Tail Whip",'Quick Attack','Hyper Fang'],self.RivalName,"Raticate")],Stage=2)
-                    self.Kanto.Rival.image = pygame.image.load(r"Map\Tileset\NPCS\Rival_Idle_Down.png").convert_alpha()
+                    self.Kanto.Rival.image = pygame.image.load(r"Map/Tileset/NPCS/Rival_Idle_Down.png").convert_alpha()
                     self.Player.rect.center = self.Kanto.SSBattleSpot
                     self.Kanto.Rival.rect.center = (self.Kanto.SSBattleSpot[0],self.Kanto.SSBattleSpot[1] - 60)
                     self.Kanto.SS_AnneF2Camera.add(self.Kanto.Rival)
@@ -4285,7 +4285,7 @@ class Main:
                                                                          [Pokemon("Pidgeot",37,["Wing Attack","Sand Attack",'Quick Attack','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Exeggcute",38,["Reflect","Poison Powder",'Leech Seed','Stun Spore'],self.RivalName,"Exeggcute"),Pokemon("Gyarados",35,["Leer","Dragon Rage",'Bite','Hydro Pump'],self.RivalName,"Gyarados"),Pokemon("Alakazam",35,["Psybeam","Confusion",'Disable','Recover'],self.RivalName,"Alakazam")],
                                                                          [Pokemon("Pidgeot",37,["Wing Attack","Sand Attack",'Quick Attack','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Gyarados",38,["Leer","Dragon Rage",'Bite','Hydro Pump'],self.RivalName,"Gyarados"),Pokemon("Growlithe",35,["Leer","Roar",'Ember','Take Down'],self.RivalName,"Growlithe"),Pokemon("Alakazam",35,["Psybeam","Confusion",'Disable','Recover'],self.RivalName,"Alakazam")],
                                                                          [Pokemon("Pidgeot",37,["Wing Attack","Sand Attack",'Quick Attack','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Growlithe",38,["Leer","Roar",'Ember','Take Down'],self.RivalName,"Growlithe"),Pokemon("Exeggcute",35,["Reflect","Poison Powder",'Leech Seed','Stun Spore'],self.RivalName,"Exeggcute"),Pokemon("Alakazam",35,["Psybeam","Confusion",'Disable','Recover'],self.RivalName,"Alakazam")],Stage=3)
-                    self.Kanto.Rival.image = pygame.image.load(r"Map\Tileset\NPCS\Rival_Idle_Up.png").convert_alpha()
+                    self.Kanto.Rival.image = pygame.image.load(r"Map/Tileset/NPCS/Rival_Idle_Up.png").convert_alpha()
                     self.Player.rect.center = self.Kanto.SilphCoRivalSpot
                     self.Kanto.Rival.rect.center = (self.Kanto.SilphCoRivalSpot[0],self.Kanto.SilphCoRivalSpot[1] + 60)
                     self.Kanto.Silph_CoF7Camera.add(self.Kanto.Rival)
@@ -5206,7 +5206,7 @@ class Main:
                                                                             [Pokemon("Pidgeot",61,["Wing Attack","Sky Attack",'Mirror Move','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Alakazam",59,["Psybeam","Psychic",'Reflect','Recover'],self.RivalName,"Alakazam"),Pokemon("Rhydon",61,["Fury Attack","Horn Drill",'Leer','Tail Whip'],self.RivalName,"Rhydon"),Pokemon("Exeggutor",61,["Barrage","Hypnosis",'Stomp','-'],self.RivalName,"Exeggutor"),Pokemon("Gyarados",63,["Leer","Dragon Rage",'Hyper Beam','Hydro Pump'],self.RivalName,"Gyarados")],
                                                                             [Pokemon("Pidgeot",61,["Wing Attack","Sky Attack",'Mirror Move','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Alakazam",59,["Psybeam","Psychic",'Reflect','Recover'],self.RivalName,"Alakazam"),Pokemon("Rhydon",61,["Fury Attack","Horn Drill",'Leer','Tail Whip'],self.RivalName,"Rhydon"),Pokemon("Gyarados",61,["Leer","Dragon Rage",'Hyper Beam','Hydro Pump'],self.RivalName,"Gyarados"),Pokemon("Arcanine",63,["Leer","Roar",'Ember','Take Down'],self.RivalName,"Arcanine")],
                                                                             [Pokemon("Pidgeot",61,["Wing Attack","Sky Attack",'Mirror Move','Whirlwind'],self.RivalName,"Pidgeot"),Pokemon("Alakazam",59,["Psybeam","Psychic",'Reflect','Recover'],self.RivalName,"Alakazam"),Pokemon("Rhydon",61,["Fury Attack","Horn Drill",'Leer','Tail Whip'],self.RivalName,"Rhydon"),Pokemon("Arcanine",61,["Leer","Roar",'Ember','Take Down'],self.RivalName,"Arcanine"),Pokemon("Exeggutor",63,["Barrage","Hypnosis",'Stomp','-'],self.RivalName,"Exeggutor")],Stage=3)
-                self.Kanto.Rival.image = pygame.image.load(r"Map\Tileset\NPCS\Rival_Idle_Down.png").convert_alpha()
+                self.Kanto.Rival.image = pygame.image.load(r"Map/Tileset/NPCS/Rival_Idle_Down.png").convert_alpha()
                 self.Player.rect.center = self.Kanto.FinalBattleLine.center
                 self.Kanto.Rival.rect.center = (self.Kanto.FinalBattleLine.centerx,self.Kanto.FinalBattleLine.centery - 30)
                 self.Kanto.IndigoPlateauChampionCamera.add(self.Kanto.Rival)
@@ -14579,7 +14579,7 @@ while True:
                 Game.Events.OakPokeBallCutscene1 = False
                 Game.Events.OakPokeBallCutscene2 = True
                 Game.Kanto.OakLabCamera.add(Game.Kanto.Rival)
-                Game.Kanto.Rival.image = pygame.image.load(r"Map\Tileset\NPCS\Rival_Idle_Up.png").convert_alpha()
+                Game.Kanto.Rival.image = pygame.image.load(r"Map/Tileset/NPCS/Rival_Idle_Up.png").convert_alpha()
             elif Game.Events.OakPokeBallCutscene2:
                 Game.Events.OakPokeBallCutscene2 = False
                 Game.Events.OakPokeBallCutscene3 = True
